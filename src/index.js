@@ -31,15 +31,17 @@ const stopColorChange = () => {
   }
 };
 
-refs.startBtn.addEventListener("click", () => {
+const onStart = () => {
   console.log("startBtn");
   timerId = setInterval(colorChange, 1000);
   refs.startBtn.disabled = true;
   refs.startBtn.style.backgroundColor = "gray";
-});
+};
+refs.startBtn.addEventListener("click", onStart);
 
-refs.stopBtn.addEventListener("click", () => {
+const onStop = () => {
   stopColorChange();
   refs.startBtn.disabled = false;
   refs.startBtn.style.backgroundColor = "#8add7f";
-});
+};
+refs.stopBtn.addEventListener("click", onStop);
